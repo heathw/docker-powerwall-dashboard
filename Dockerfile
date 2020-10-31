@@ -5,7 +5,7 @@ LABEL Vendor="CentOS7" \
       License=GPLv2 \
       Version=1.0
 
-ENV POWERWALL_HOST="teslapw"
+ENV POWERWALL_HOST="10.0.0.25"
 ENV DATABASE="PowerwallData"
 
 ADD powerwall.repo /etc/yum.repos.d/powerwall.repo
@@ -38,6 +38,6 @@ ADD run.sh /opt/run.sh
 RUN chmod -v +x /opt/run.sh
 RUN export $(grep -v "#" /etc/sysconfig/grafana-server | cut -d= -f1)
 
-ENV POWERWALL_LOCATION="lat=36.2452052&lon=-113.7292593"
+ENV POWERWALL_LOCATION="lat=-29.77552&lon=151.12384"
 
 CMD ["/opt/run.sh"]
